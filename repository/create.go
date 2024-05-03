@@ -13,12 +13,11 @@ func (h *PostgresHandler) CreateTable() error {
 
 	sql := `
 		CREATE TABLE IF NOT EXISTS todo (
-			id    BIGINT PRIMARY KEY,
-			desc  TEXT NOT NULL,
-			do boolean NOT NULL,
+			id BIGSERIAL  PRIMARY KEY
+			,description TEXT NOT NULL
+			,status boolean NOT NULL
 		);
 	`
-
 	_, err = db.Exec(sql)
 	if err != nil {
 		return fmt.Errorf("method db Exec error: %s", err.Error())

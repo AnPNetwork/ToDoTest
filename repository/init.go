@@ -23,15 +23,16 @@ func NewConnectionDB(settings domain.DBSettings) (*PostgresHandler, error) {
 
 	connPG := fmt.Sprintf(
 		`
-		user=postgres 
 		host=%s 
 		port=%d 
+		user=%s 
 		password=%s 
 		dbname=%s 
 		sslmode=%s
 		`,
 		settings.Host,
 		settings.Port,
+		settings.User,
 		settings.Password,
 		settings.Name,
 		settings.SSL,

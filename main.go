@@ -17,7 +17,7 @@ func main() {
 
 	// HTTP
 	flag.StringVar(&settings.Http.Host, "http_host", "0.0.0.0", "host http server")
-	httpPort := flag.Int("http_port", 80, "port http server")
+	httpPort := flag.Int("http_port", 3000, "port http server")
 
 	// DB
 	flag.StringVar(&settings.DB.Host, "db_host", "localhost", "host db server")

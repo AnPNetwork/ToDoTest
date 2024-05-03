@@ -16,10 +16,11 @@ func (h *PostgresHandler) GetTODOList() ([]domain.TODO, error) {
 	sql := `
 		SELECT
 			id
-			,desc
-			,do
+			,description
+			,status
 		FROM
 			todo
+		ORDER BY description ASC
 	`
 
 	rows, err := db.Query(sql)
@@ -32,7 +33,7 @@ func (h *PostgresHandler) GetTODOList() ([]domain.TODO, error) {
 
 	for rows.Next() {
 		el := domain.TODO{}
-		err := rows.Scan(&el.Id, &el.Description, &el.Do)
+		err := rows.Scan(&el.Id, &el.Description, &el.Status)
 		if err != nil {
 			fmt.Println(err)
 			continue
