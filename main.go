@@ -20,7 +20,7 @@ func main() {
 	httpPort := flag.Int("http_port", 3000, "port http server")
 
 	// DB
-	flag.StringVar(&settings.DB.Host, "db_host", "localhost", "host db server")
+	flag.StringVar(&settings.DB.Host, "db_host", "db", "host db server")
 	dbPort := flag.Int("db_port", 5432, "port db server")
 	flag.StringVar(&settings.DB.Name, "db_name", "site", "db name PostgreSQL")
 	flag.StringVar(&settings.DB.User, "db_user", "site", "user PostgreSQL")
